@@ -67,7 +67,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rj586")
 }],
-"loop": true,
+"loop": 1,
 "name": &"animation_idle",
 "speed": 5.0
 }, {
@@ -78,7 +78,7 @@ animations = [{
 "duration": 0.5,
 "texture": SubResource("AtlasTexture_ir8iy")
 }],
-"loop": false,
+"loop": 0,
 "name": &"animation_prepare",
 "speed": 5.0
 }, {
@@ -89,7 +89,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x0ka3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"animation_run",
 "speed": 5.0
 }, {
@@ -100,7 +100,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nr8wp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"animation_walk",
 "speed": 5.0
 }]
@@ -118,7 +118,7 @@ run = 2.0
 move = 0.5
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=403768816]
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1624867540]
 position = Vector2(4.9230685, -29.538464)

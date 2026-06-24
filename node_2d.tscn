@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cntli77xa0pqc" path="res://assets/map/element/light_2.png" id="3_rj586"]
 [ext_resource type="Texture2D" uid="uid://rbhek6jx01rr" path="res://assets/map/element/element_1.png" id="4_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://pnic7f2hobd8" path="res://killzone.tscn" id="6_d21ai"]
+[ext_resource type="PackedScene" uid="uid://dd8uwcgqciba8" path="res://enemy.tscn" id="7_d21ai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0e48y"]
 texture = ExtResource("1_wtcfe")
@@ -96,11 +97,14 @@ gradient = SubResource("Gradient_rj586")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kdubu"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdubu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(38, 20)
+
 [node name="Mapa" type="Node2D" unique_id=399268599]
 
 [node name="CharacterBody2D" parent="." unique_id=516748824 instance=ExtResource("1_kdubu")]
-
-[node name="killzone" parent="CharacterBody2D" unique_id=1665628215 instance=ExtResource("6_d21ai")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1097366138]
 texture_filter = 1
@@ -113,6 +117,7 @@ tile_map_data = PackedByteArray("AAB3AAQAAQABAAIAAAB4AAQAAgADAAIAAAA=")
 tile_set = SubResource("TileSet_d21ai")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=297401643]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1277211630]
 polygon = PackedVector2Array(26, 42, 614, 42, 614, 925, 26, 923)
@@ -150,3 +155,17 @@ position = Vector2(660, 578)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=497020060]
 shape = SubResource("WorldBoundaryShape2D_kdubu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1047586985]
+position = Vector2(1913, 71)
+sprite_frames = SubResource("SpriteFrames_kdubu")
+
+[node name="enemy" parent="." unique_id=1300040835 instance=ExtResource("7_d21ai")]
+position = Vector2(576, 21)
+
+[node name="killzone2" parent="enemy" unique_id=1665628215 instance=ExtResource("6_d21ai")]
+position = Vector2(-1, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy/killzone2" unique_id=1710325002]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_4gyqm")

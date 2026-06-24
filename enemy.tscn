@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dd8uwcgqciba8"]
+
+[ext_resource type="Script" uid="uid://c3mthurjxo4ni" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://bbqqmdhkm0ba1" path="res://assets/map/plataform.png" id="2_qi2p4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8256"]
+atlas = ExtResource("2_qi2p4")
+region = Rect2(0, 0, 48, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8256")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(34, 12)
+
+[node name="enemy" type="CharacterBody2D" unique_id=1300040835]
+script = ExtResource("1_4gyqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2000806291]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.6288968
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=356044525]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="FloorLeft" type="RayCast2D" parent="." unique_id=1788962]
+target_position = Vector2(-21, 14)
+
+[node name="FloorRight" type="RayCast2D" parent="." unique_id=768323462]
+target_position = Vector2(21, 14)
