@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://bgeqkoplfq4k"]
 
+[ext_resource type="Script" uid="uid://uffdvcrs2km1" path="res://coin.gd" id="1_0t63x"]
+[ext_resource type="Texture2D" uid="uid://d21c3v4li0yst" path="res://assets/map/moeda.png" id="2_v7riw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(18, 23)
+
 [node name="Coin" type="Area2D" unique_id=836451794]
+script = ExtResource("1_0t63x")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1008719630]
+texture = ExtResource("2_v7riw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=958907165]
+position = Vector2(1, -2.5)
+shape = SubResource("RectangleShape2D_g4v7s")

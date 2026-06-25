@@ -1,12 +1,13 @@
 [gd_scene format=4 uid="uid://bls2nwi65cm7k"]
 
-[ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://player.tscn" id="1_kdubu"]
+[ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://Player.tscn" id="1_kdubu"]
 [ext_resource type="Texture2D" uid="uid://ffr370rm4ith" path="res://assets/map/map.png" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://bbqqmdhkm0ba1" path="res://assets/map/plataform.png" id="2_rj586"]
 [ext_resource type="Texture2D" uid="uid://cntli77xa0pqc" path="res://assets/map/element/light_2.png" id="3_rj586"]
 [ext_resource type="Texture2D" uid="uid://rbhek6jx01rr" path="res://assets/map/element/element_1.png" id="4_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://pnic7f2hobd8" path="res://killzone.tscn" id="6_d21ai"]
 [ext_resource type="PackedScene" uid="uid://dd8uwcgqciba8" path="res://enemy.tscn" id="7_d21ai"]
+[ext_resource type="PackedScene" uid="uid://bgeqkoplfq4k" path="res://coin.tscn" id="8_rj586"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0e48y"]
 texture = ExtResource("1_wtcfe")
@@ -169,3 +170,6 @@ position = Vector2(-1, 2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy/killzone2" unique_id=1710325002]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_4gyqm")
+
+[node name="Coin" parent="." unique_id=836451794 instance=ExtResource("8_rj586")]
+position = Vector2(1425, 209)

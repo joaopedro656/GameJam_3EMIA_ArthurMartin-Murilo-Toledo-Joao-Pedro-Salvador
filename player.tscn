@@ -108,7 +108,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_d2bti"]
 radius = 3.9384613
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=516748824]
+[node name="Player" type="CharacterBody2D" unique_id=516748824]
 z_index = 1
 position = Vector2(52.000004, 20)
 scale = Vector2(0.203125, 0.203125)
@@ -127,7 +127,6 @@ sprite_frames = SubResource("SpriteFrames_nr8wp")
 animation = &"animation_walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=818570432]
-visible = false
 position = Vector2(4.923077, 4.923077)
 scale = Vector2(10, 10)
 shape = SubResource("CircleShape2D_d2bti")
